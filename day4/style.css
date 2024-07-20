@@ -1,0 +1,28 @@
+.container {
+	text-align: center;
+	background-color: aqua;
+	color: black;
+	width: 60%;
+	margin: auto;
+	padding: 10% 5%;
+}
+.container button {
+	border: none;
+	padding: 15px 30px;
+	color: rgb(0, 0, 0);
+	background-color: yellow;
+	border-radius: 15px;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+.container input {
+	padding: 15px 30px;
+	border-radius: 15px;
+	font-size: 1.2em;
+}
+.hh {
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: italic;
+	font-weight: 800;
+	color: rgb(219, 7, 7);
+}

@@ -1,0 +1,28 @@
+/* .counter {
+	text-align: center;
+	font-size: 2em;
+	
+}
+.btn {
+	padding: 10px 20px;
+	margin: 5px;
+	color: white;
+	background-color: rebeccapurple;
+	font-size: 1.2em;
+	border: none;
+}
+.btn:hover {
+	background-color: rgb(163, 127, 198);
+} */
+
+.dice {
+	text-align: center;
+}
+.btn {
+	padding: 10px 20px;
+	margin: 5px;
+	color: white;
+	background-color: rebeccapurple;
+	font-size: 1.2em;
+	border: none;
+}
