@@ -318,3 +318,25 @@
 // 	return (product = product * ele);
 // }, 1);
 // console.log(product);
+
+/********************************************************************************************** */
+//ques-->8
+
+// function charCount(value, char) {
+// 	if (char === "" || char === undefined) {
+// 		let space = 0;
+// 		let newValue = value.split(" ");
+// 		for (let v of newValue) {
+// 			space++;
+// 		}
+// 		return space - 1;
+// 	}
+// 	let count = 0;
+// 	for (let v of value) {
+// 		if (v === char) count++;
+// 	}
+// 	return count;
+// }
+
+// console.log(charCount("hello worold", "o"));
+// console.log(charCount("hello world ali"));
