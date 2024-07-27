@@ -8,9 +8,9 @@ var fruits = ["mango", "banana", "lichi", "orange"];
 // fruits.unshift("tomato");
 // console.log("unshift", fruits);
 // console.log("slice", fruits.slice(1, 5));
-var newFruits = fruits.splice(5, 1, "potato", "mustang");
-console.log("new fruits", newFruits);
-console.log("fruits", fruits);
+// var newFruits = fruits.splice(5, 1, "potato", "mustang");
+// console.log("new fruits", newFruits);
+// console.log("fruits", fruits);
 
 // Q Given an array of names find out index of target .
 var students = ["rahul", "nehal", "ali", "amod", "adep"];
@@ -19,3 +19,4 @@ for (var i = 0; i < students.length; i++) {
 }
 // var target = "adep"
 // output  : 4
+console.log(students.indexOf("adep"));
