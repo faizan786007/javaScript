@@ -515,3 +515,91 @@
 // console.log(person.free());
 
 /************************************************************************** */
+//constructor
+
+// function Car(brand, name, model) {
+// 	(this.brand = brand),
+// 		(this.name = name),
+// 		(this.model = model),
+// 		(this.drive = function () {
+// 			console.log(`you drive ${this.brand} model ${this.model}`);
+// 		});
+// }
+
+// const car1 = new Car("suzuki", "baleno", 2021);
+// const car2 = new Car("honda", "city", 2016);
+// console.log(car1.brand);
+// console.log(car1.model);
+// console.log(car1.name);
+// console.log(car1.drive());
+// console.log(car2.brand);
+// console.log(car2.model);
+// console.log(car2.name);
+// console.log(car2.drive());
+
+/****************************************************************** */
+//class
+
+// class Car {
+// 	constructor(brand, model) {
+// 		(this.brand = brand), (this.model = model);
+// 	}
+// 	drive() {
+// 		console.log(`u drive a ${this.brand} and ${this.model} model`);
+// 	}
+// 	sell(tax) {
+// 		console.log(`tax on selling is ${tax}`);
+// 	}
+// }
+
+// const car1 = new Car("honda", 2016);
+// console.log(car1.brand);
+// console.log(car1.model);
+// console.log(car1.drive());
+// console.log(car1.sell(100));
+
+/*************************************************************************** */
+// //destructure
+// let a = 10;
+// let b = 20;
+// [b, a] = [a, b];
+// console.log(a);
+// console.log(b);
+// let number = [1, 2, 3, 4, 5];
+// [number[4], number[0]] = [number[0], number[4]];
+// console.log(number);
+// const [n1, n2, ...n3] = number;
+// console.log(n1);
+// console.log(n2);
+// console.log(n3);
+
+// const person = {
+// 	name: "ali",
+// 	age: 25,
+// };
+// const { name, age } = person;
+// console.log(name);
+// console.log(age);
+
+// test(person);
+// function test({ name, age }) {
+// 	console.log(name);
+// 	console.log(age);
+// }
+
+// const myVehicle = {
+// 	brand: "Ford",
+// 	model: "Mustang",
+// 	color: "red",
+// };
+
+// const updateMyVehicle = {
+// 	type: "car",
+// 	year: 2021,
+// 	color: "yellow",
+// };
+
+// const myUpdatedVehicle = { ...myVehicle, ...updateMyVehicle };
+
+// //Check the result object in the console:
+// console.log(myUpdatedVehicle);
