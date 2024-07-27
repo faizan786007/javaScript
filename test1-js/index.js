@@ -243,7 +243,7 @@
 
 // let inputs = ["apple", "bat", "car", "dolphin"];
 
-//method-1 (using for each)
+//method-1 (using for loop)
 // function output(inputs) {
 // 	let emptyObj = {};
 // 	for (let input of inputs) {
@@ -266,3 +266,55 @@
 // 	return newArray;
 // }
 // console.log(output(inputs));
+
+/**************************************************************************************** */
+//****************************************************************************************** */
+
+//testing some concept used in ques
+
+// const nums = [10, 20, 30, 40, 50];
+
+// const numsWithIndices = nums.map((num, index) => {
+// 	return { num, index };
+// });
+
+// console.log(numsWithIndices);
+/************************************************************************************************* */
+
+//checking vowel in string
+
+// function checkVowel(str) {
+// 	let vw = "aeiouAEIOU";
+// 	let count = 0;
+// 	for (let char of str) {
+// 		if (vw.includes(char)) {
+// 			count++;
+// 		}
+// 	}
+// 	return count;
+// }
+// console.log(checkVowel("HEllo WOrld"));
+// console.log(checkVowel("JavaScript")); // Output: 3
+// console.log(checkVowel("AEIOU")); // Output: 5
+// console.log(checkVowel("123456")); // Output: 0
+
+//check vowel in string using split and reduce
+
+// function checkVowel(str) {
+// 	let vw = "aeiouAEIOU";
+// 	return str.split("").reduce((count, char) => {
+// 		return vw.includes(char) ? count + 1 : count;
+// 	}, 0);
+// }
+// console.log(checkVowel("HEllo WOrld"));
+// console.log(checkVowel("JavaScript")); // Output: 3
+// console.log(checkVowel("AEIOU")); // Output: 5
+// console.log(checkVowel("123456")); // Output: 0
+
+/*********************************************************************************** ***********/
+//product of element in array using reduce
+// let input = [2, 3, 4, 1];
+// let product = input.reduce((product, ele) => {
+// 	return (product = product * ele);
+// }, 1);
+// console.log(product);
