@@ -603,3 +603,201 @@
 
 // //Check the result object in the console:
 // console.log(myUpdatedVehicle);
+
+/****************************************************************************************** */
+//nested objected
+
+// const person = {
+// 	name: "bond",
+// 	age: 21,
+// 	activity: ["killing", "assasination"],
+// 	address: {
+// 		city: "usa",
+// 		phone: 214631,
+// 	},
+// };
+
+// console.log(person.name);
+// console.log(person.age);
+// console.log(person.activity);
+// console.log(person.activity[1]);
+// console.log(person.address);
+// console.log(person.address.city);
+
+// for (let v in person.address) {
+// 	console.log(person.address[v]); //v is index
+// }
+// for (let v in person.activity) {
+// 	console.log(person.activity[v]);
+// }
+
+/******************************************************************************* */
+//array of object
+
+// const fruits = [
+// 	{ name: "mango", color: "yellow", calorie: 125 },
+// 	{ name: "apple", color: "red", calorie: 155 },
+// 	{ name: "banana", color: "yellow", calorie: 115 },
+// 	{ name: "lichi", color: "white", calorie: 175 },
+// ];
+
+// console.log(fruits[1].color);
+// fruits.push({ name: "papaye", color: "orange", calorie: 225 });
+// console.log(fruits);
+// fruits.pop();
+// console.log(fruits);
+
+// fruits.forEach((fruit) => console.log(fruit.name));
+// let newFruits1 = fruits.map((fruit) => fruit.name);
+// console.log(newFruits1);
+// let newFruits2 = fruits.filter((fruit) => fruit.color === "yellow");
+// console.log(newFruits2);
+// let newFruits3 = fruits.reduce((max, fruit) => {
+// 	return fruit.calorie > max.calorie ? fruit : max;
+// }, fruits[0]);
+// console.log(newFruits3);
+
+// let newFruits4 = fruits.reduce((min, fruit) => {
+// 	return fruit.calorie < min.calorie ? fruit : min;
+// }, fruits[0]);
+// console.log(newFruits4);
+
+/******************************************************************************************* */
+
+//sort
+
+// let fruits = ["appple", "mango", "orange", "banana"];
+// console.log(fruits.sort());
+// let number = [11, 2, 10, 8, 14, 20];
+// console.log(number.sort((a, b) => a - b));
+
+// const fruits = [
+// 	{ name: "mango", color: "yellow", calorie: 125 },
+// 	{ name: "apple", color: "red", calorie: 155 },
+// 	{ name: "banana", color: "yellow", calorie: 115 },
+// 	{ name: "lichi", color: "white", calorie: 175 },
+// ];
+
+// console.log(fruits.sort((a, b) => a.calorie - b.calorie));
+// console.log(fruits.sort((a, b) => a.name.localeCompare(b.name)));
+
+/**************************************************************************************** */
+// var string = "nayannayan";
+// function findDuplicates(string) {
+// 	var output = {};
+// 	console.log(string, "string");
+// 	for (var i = 0; i <= string.length - 1; i++) {
+// 		// console.log(string[i]);
+// 		// console.log(output[string[i]]);
+// 		if (output[string[i]] == undefined) {
+// 			output[string[i]] = 1;
+// 		} else {
+// 			output[string[i]]++;
+// 		}
+// 	}
+// 	console.log(output);
+// 	let max = 0;
+// 	let maxCh = " ";
+// 	for (let index in output) {
+// 		if (output[index] > max) {
+// 			max = output[index];
+// 			maxCh = index;
+// 		}
+// 	}
+// 	console.log(`${maxCh}: ${max}`);
+// 	// console.log(maxCh);
+// }
+
+// findDuplicates(string);
+
+// const names = ["Alice", "Bob", "Tiff", "Bruce", "Alice"];
+// const nameCount = names.reduce((accumulator, currentValue) => {
+// 	if (currentValue in accumulator) {
+// 		accumulator[currentValue]++;
+// 	} else {
+// 		accumulator[currentValue] = 1;
+// 	}
+// 	return accumulator;
+// }, {});
+// console.log(nameCount); // Output: { Alice: 2, Bob: 1, Tiff: 1, Bruce: 1 }
+
+//map
+
+//sqaure
+
+// let tempNum = num.map((ele) => {
+// 	return ele * ele;
+// });
+// console.log(tempNum);
+//filter
+// let tempNum = num.filter((ele) => {
+// 	return ele % 2 == 0;
+// });
+// console.log(tempNum);
+//reduce====side output
+//sum
+
+// let num = [1, 2, 3, 4, 5];
+// //max
+// let tempNum = num.reduce((acc, currentValue) => {
+// 	return currentValue < acc ? currentValue : acc;
+// }, num[0]);
+// console.log(tempNum);
+
+// let fruits = [
+// 	{ name: "orange", color: "orange", calorie: 155 },
+// 	{ name: "apple", color: "red", calorie: 175 },
+// 	{ name: "banana", color: "yellow", calorie: 111 },
+// 	{ name: "strawberry", color: "red", calorie: 95 },
+// ];
+
+// let newFruits1 = fruits.sort((a, b) => a.name.localeCompare(b.name));
+// let newFruits2 = fruits.sort((a, b) => a.color.localeCompare(b.color));
+
+// console.log(newFruits1);
+// console.log(newFruits2);
+
+// let num = [21, 15, 7, 19, 10, 12];
+// let fruits = ["apple", "mango", "banana", "papaya"];
+// console.log(fruits.toReversed());
+// console.log(fruits.sort());
+// console.log(num.sort((a, b) => b - a));
+
+// let newFruits1 = fruits.map((fruit) => {
+// 	return fruit.name;
+// });
+// console.log(newFruits1);
+// let newFruits2 = fruits.filter((fruit) => {
+// 	return fruit.calorie > 100;
+// });
+// console.log(newFruits2);
+// let newFruits3 = fruits.filter((fruit) => {
+// 	return fruit.color === "red";
+// });
+// console.log(newFruits3);
+
+// let newFruits4 = fruits.reduce((max, currentValue) => {
+// 	return max.calorie > currentValue.calorie ? max : currentValue;
+// }, fruits[0]);
+// console.log(newFruits4);
+
+// let num = 5;
+// console.log(Math.pow(num, 2));
+// let num2 = [1, 25, 65, 25];
+// console.log(Math.max(...num2));
+// console.log(Math.max(1, 2, 54, 21, 95));
+
+// let random = Math.floor(Math.random() * 5) + 2;
+// console.log(random);
+
+console.log("start");
+function delay() {
+	setTimeout(() => {
+		// console.log("waiting");
+		end();
+	}, 3000);
+}
+delay();
+function end() {
+	console.log("end");
+}
