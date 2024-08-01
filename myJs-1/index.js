@@ -720,7 +720,7 @@
 // 	return accumulator;
 // }, {});
 // console.log(nameCount); // Output: { Alice: 2, Bob: 1, Tiff: 1, Bruce: 1 }
-
+/********************************************************************************************** */
 //map
 
 //sqaure
@@ -790,14 +790,61 @@
 // let random = Math.floor(Math.random() * 5) + 2;
 // console.log(random);
 
-console.log("start");
-function delay() {
-	setTimeout(() => {
-		// console.log("waiting");
-		end();
-	}, 3000);
-}
-delay();
-function end() {
-	console.log("end");
-}
+// console.log("start");
+// function delay() {
+// 	setTimeout(() => {
+// 		// console.log("waiting");
+//         end()
+// 	}, 3000);
+// }
+// delay();
+// function end(){console.log("end");}
+
+/****************************************************************************************** */
+//////////////////////ACCUMULATOR////////////////////////////
+// const nestedArray = [
+// 	[0, 1],
+// 	[2, 3],
+// 	[4, 5],
+// ];
+// const flattenedArray = nestedArray.reduce(
+// 	(accumulator, currentValue) => accumulator.concat(currentValue),
+// 	[]
+// );
+// console.log(flattenedArray); // Output: [0, 1, 2, 3, 4, 5]
+
+// const names = ["Alice", "Bob", "Tiff", "Bruce", "Alice"];
+// const newNames = names.reduce((acc, cv) => {
+// 	// acc[cv] = (acc[cv] || 0) + 1;
+// 	if (!acc[cv]) {
+// 		acc[cv] = 1;
+// 	} else {
+// 		acc[cv]++;
+// 	}
+// 	return acc;
+// }, {});
+// console.log(newNames);
+
+const people = [
+	{ name: "Alice", age: 21 },
+	{ name: "Bob", age: 25 },
+	{ name: "Tiff", age: 21 },
+	{ name: "Bruce", age: 30 },
+];
+let newPeople = people.reduce((acc, cv) => {
+	let v = cv.age;
+	if (!acc[v]) {
+		acc[v] = [];
+	}
+	acc[v].push(cv);
+
+	return acc;
+}, {});
+console.log(newPeople);
+
+// Output:
+// {
+//     '21': [{ name: 'Alice', age: 21 }, { name: 'Tiff', age: 21 }],
+//     '25': [{ name: 'Bob', age: 25 }],
+//     '30': [{ name: 'Bruce', age: 30 }]
+// }
