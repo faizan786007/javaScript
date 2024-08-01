@@ -825,22 +825,22 @@
 // }, {});
 // console.log(newNames);
 
-const people = [
-	{ name: "Alice", age: 21 },
-	{ name: "Bob", age: 25 },
-	{ name: "Tiff", age: 21 },
-	{ name: "Bruce", age: 30 },
-];
-let newPeople = people.reduce((acc, cv) => {
-	let v = cv.age;
-	if (!acc[v]) {
-		acc[v] = [];
-	}
-	acc[v].push(cv);
+// const people = [
+// 	{ name: "Alice", age: 21 },
+// 	{ name: "Bob", age: 25 },
+// 	{ name: "Tiff", age: 21 },
+// 	{ name: "Bruce", age: 30 },
+// ];
+// let newPeople = people.reduce((acc, cv) => {
+// 	let v = cv.age;
+// 	if (!acc[v]) {
+// 		acc[v] = [];
+// 	}
+// 	acc[v].push(cv);
 
-	return acc;
-}, {});
-console.log(newPeople);
+// 	return acc;
+// }, {});
+// console.log(newPeople);
 
 // Output:
 // {
@@ -848,3 +848,4 @@ console.log(newPeople);
 //     '25': [{ name: 'Bob', age: 25 }],
 //     '30': [{ name: 'Bruce', age: 30 }]
 // }
+// ********************************************************************************************************
