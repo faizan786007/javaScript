@@ -229,3 +229,74 @@
 // }
 // console.log(findDuplicate(arr));
 /************************************************************************ */
+
+// let no = [];
+
+// function student(...student) {
+// 	for (let v of student) no.push(v);
+// }
+// student("ali", "amit", "ravi");
+// console.log(no);
+
+// let n1 = [1, 2, 3];
+// let n2 = [4, 5, 6];
+// // let n3 = n1;    //permanent copy
+// // n3.push(9);
+// // console.log(n3);
+// // console.log(n1);
+
+// let n4 = [...n1]; //shallow copy
+// n4.push(9);
+// console.log(n4);
+// console.log(n1);
+// let n5 = [...n1, ...n2];
+// console.log(n5);
+/****************************************************************************************** */
+//sets
+
+// arr1 = [1, 2, 4, 5, 7];
+// arr2 = [3, 4, 6, 7, 9, 0];
+// function mergeArray(arr1, arr2) {
+// 	let arr3 = arr1.concat(arr2);
+// 	let set1 = new Set();
+// 	for (v of arr3) set1.add(v);
+// 	return set1;
+// 	//Implemet your function here
+// }
+// console.log(mergeArray(arr1, arr2));
+// //Output : [1,2,4,5,7,3,6,9,0]
+
+/********************************************************************************************** */
+// const a = {
+// 	100: "ali",
+// 	age: 25,
+// 	gender: "male",
+// };
+// console.log(a["100"]);
+// console.log(a[100]); //only for no.
+// console.log(a[3]);//undefined
+/************************************************************************************* */
+const studentMarks = {
+	John: [85, 90, 92, 88, 87],
+	Jane: [92, 95, 89, 91, 94],
+	David: [78, 85, 90, 92, 84],
+	Emily: [90, 88, 92, 87, 91],
+	Michael: [86, 92, 90, 89, 94],
+};
+function sum(ele) {
+	let sum = 0;
+	for (let v of ele) console.log(v);
+}
+function findClassTopper(studentMarks) {
+	let key = Object.keys(studentMarks);
+	let value = Object.values(studentMarks);
+
+	key.forEach((ele) => {
+		sum(ele);
+	});
+	// console.log(key);
+	// console.log(value);
+	//Implement your function here
+}
+console.log(findClassTopper(studentMarks));
+//Output : "Jane";

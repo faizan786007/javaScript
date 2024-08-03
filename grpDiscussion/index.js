@@ -1,6 +1,7 @@
 //["1abc", "2def", "3ghi", "4jkl"];
-//1,4,9,16=>30
-//[1,2,3,4]
+// ["1a2b3c", "2d4e5f", "3g6h7i", "4j8k9l"]
+//1,4,9,16=>30   //hint
+//[1,2,3,4]      //hint
 //output: 30;
 
 // console.log(parseInt("10e1d2ds"));
