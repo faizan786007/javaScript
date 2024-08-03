@@ -10,12 +10,16 @@ const employees = [
 	{ name: "Eve", age: 28, department: "Marketing" },
 ];
 function sortByDepartmentAndAge(employees) {
-	let newEmployees = employees.sort((a, b) =>
-		a.department.localeCompare(b.department)
-	);
-	return newEmployees.sort((a, b) => a.age - b.age);
+	return employees.sort((a, b) => {
+		let departComparison = a.department.localeCompare(b.department);
+		if (departComparison !== 0) {
+			return departComparison;
+		}
+		return a.age - b.age;
+	});
 	// Your code here
 }
+
 console.log(sortByDepartmentAndAge(employees));
 // Output should be sorted by department and then by age within each department
 
