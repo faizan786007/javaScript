@@ -849,3 +849,49 @@
 //     '30': [{ name: 'Bruce', age: 30 }]
 // }
 // ********************************************************************************************************
+// const employees = [
+// 	{ name: "Alice", age: 25, department: "HR" },
+// 	{ name: "Bob", age: 30, department: "Engineering" },
+// 	{ name: "Charlie", age: 22, department: "HR" },
+// 	{ name: "David", age: 35, department: "Engineering" },
+// 	{ name: "Eve", age: 28, department: "Marketing" },
+// ];
+// function sortByDepartmentAndAge(employees) {
+// 	let res = employees.sort((a, b) => a.department.localeCompare(b.department));
+// 	console.log(res);
+// 	// let res1 = res.sort((a, b) => a.age - b.age);
+// 	let res1 = res.filter((e) => e.age > e.age);
+// 	console.log(res1);
+// 	// Your code here
+// }
+
+// console.log(sortByDepartmentAndAge(employees));
+/************************************************************************************ */
+const items = [
+	{ name: "Edward", value: 21 },
+	{ name: "Sharpe", value: 37 },
+	{ name: "And", value: 45 },
+	{ name: "The", value: -12 },
+	{ name: "Magnetic", value: 13 },
+	{ name: "Zeros", value: 37 },
+];
+
+// sort by value
+// let i = items.sort((a, b) => a.value - b.value);
+// console.log(i);
+
+// sort by name
+let j = items.sort((a, b) => {
+	const nameA = a.name;
+	const nameB = b.name;
+	if (nameA < nameB) {
+		return -1;
+	}
+	if (nameA > nameB) {
+		return 1;
+	}
+
+	// names must be equal
+	return 0;
+});
+console.log(j);

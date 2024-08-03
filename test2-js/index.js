@@ -12,9 +12,13 @@ const employees = [
 function sortByDepartmentAndAge(employees) {
 	return employees.sort((a, b) => {
 		let departComparison = a.department.localeCompare(b.department);
+		// return departComparison;
+
+		// if dept are differnt
 		if (departComparison !== 0) {
 			return departComparison;
 		}
+		// //if dept are same compare age
 		return a.age - b.age;
 	});
 	// Your code here
@@ -68,3 +72,26 @@ function availableBooks(library) {
 }
 console.log(availableBooks(library));
 // Output should be ["The Great Gatsby", "To Kill a Mockingbird"]
+/**************************************************************************************************** */
+/************************************************************************************************* */
+/************************************************************************************************** */
+// const employees = [
+// 	{ name: "Alice", age: 25, department: "HR" },
+// 	{ name: "Bob", age: 30, department: "Engineering" },
+// 	{ name: "Charlie", age: 22, department: "HR" },
+// 	{ name: "David", age: 35, department: "Engineering" },
+// 	{ name: "Eve", age: 28, department: "Marketing" },
+// ];
+
+// function sortByDepartmentAndAge(employees) {
+// 	return employees.sort((a, b) => {
+// 		if (a.department < b.department) return -1;
+// 		if (a.department > b.department) return 1;
+// 		// return 0;//means dept are equal//so compare age
+// 		if (a.age < b.age) return -1;
+// 		if (a.age > b.age) return 1;
+// 		return 0;
+// 	});
+// }
+
+// console.log(sortByDepartmentAndAge(employees));
