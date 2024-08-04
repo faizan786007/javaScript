@@ -276,27 +276,87 @@
 // console.log(a[100]); //only for no.
 // console.log(a[3]);//undefined
 /************************************************************************************* */
-const studentMarks = {
-	John: [85, 90, 92, 88, 87],
-	Jane: [92, 95, 89, 91, 94],
-	David: [78, 85, 90, 92, 84],
-	Emily: [90, 88, 92, 87, 91],
-	Michael: [86, 92, 90, 89, 94],
-};
-function sum(ele) {
-	let sum = 0;
-	for (let v of ele) console.log(v);
-}
-function findClassTopper(studentMarks) {
-	let key = Object.keys(studentMarks);
-	let value = Object.values(studentMarks);
+// const studentMarks = {
+// 	John: [85, 90, 92, 88, 87],
+// 	Jane: [92, 95, 89, 91, 94],
+// 	David: [78, 85, 90, 92, 84],
+// 	Emily: [90, 88, 92, 87, 91],
+// 	Michael: [86, 92, 90, 89, 94],
+// };
+// function sum(ele) {
+// 	let sum = 0;
+// 	for (let v of ele) console.log(v);
+// }
+// function findClassTopper(studentMarks) {
+// 	let key = Object.keys(studentMarks);
+// 	let value = Object.values(studentMarks);
 
-	key.forEach((ele) => {
-		sum(ele);
-	});
-	// console.log(key);
-	// console.log(value);
-	//Implement your function here
+// 	key.forEach((ele) => {
+// 		sum(ele);
+// 	});
+// 	// console.log(key);
+// 	// console.log(value);
+// 	//Implement your function here
+// }
+// console.log(findClassTopper(studentMarks));
+// //Output : "Jane";
+/*********************************************************************************************** */
+
+// function me() {
+// 	var a = 10;
+// }
+// // console.log(a); //ReferenceError: a is not defined
+// //functional scope
+// {
+// 	var x = 10;
+// 	let y = 20;
+// 	let z = 30;
+// }
+// console.log(x);
+// console.log(y);
+// console.log(z);
+
+//var,let,const => all functional scope(inside function)
+//let,const =>block scope
+//var =>global scope
+/************************************************************************************************ */
+
+// function sum() {
+// 	return 10, 20, 30;
+// }
+// var a = sum();
+// console.log(a);
+/************************************************************************************* */
+//var,let,const are hoisted but let n const are in temporal dead zone
+// var a = 20;
+// {
+// 	console.log(a);//20
+// 	var a = 10;
+// }
+// let b = 20;
+// {
+// 	console.log(b);//ReferenceError: Cannot access 'b' before initialization
+// 	let b = 10;
+// }
+//********************************************************************************************* */
+// "use strict";   //without use strict 10 will be print
+// a = 10;
+// console.log(a); //10
+/******************************************************************************************** */
+// var a = 10;
+// let a = 20;
+// console.log(a);//SyntaxError: Identifier 'a' has already been declared
+/******************************************************************************************* */
+//closure
+let a = 10;
+
+function outer() {
+	let b = 20;
+	return function inner() {
+		let c = 30;
+		return `${a},${b},${c}`;
+	};
 }
-console.log(findClassTopper(studentMarks));
-//Output : "Jane";
+let temp = outer();
+console.log(temp());
+//althought outer is out from call stack but inner remember b value through closure

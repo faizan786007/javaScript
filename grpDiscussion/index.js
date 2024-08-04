@@ -105,3 +105,107 @@
 
 //"hello"
 //"olleh"
+
+/****************************************************************************************** */
+/****************************************************************************************** */
+// const employees = [
+// 	{ name: "Alice", age: 25, department: "HR" },
+// 	{ name: "Bob", age: 30, department: "Engineering" },
+// 	{ name: "Charlie", age: 22, department: "HR" },
+// 	{ name: "David", age: 35, department: "Engineering" },
+// 	{ name: "Eve", age: 28, department: "Marketing" },
+// ];
+// function sortByDepartmentAndAge(employees) {
+// 	// let temp = employees.sort((a, b) => a.department.localeCompare(b.department));
+// 	// console.log(temp);
+// 	// let temp1 = temp.sort((a, b) => a.age - b.age);
+// 	// console.log(temp1);
+// 	let temp = employees.sort((a, b) => {
+// 		if (a.department < b.department) return -1;
+// 		if (a.department > b.department) return 1;
+
+// 		//if value is same now sort age
+// 		if (a.age < b.age) return -1;
+// 		if (a.age > b.age) return 1;
+// 		return 0;
+// 	});
+// 	return temp;
+// }
+// console.log(sortByDepartmentAndAge(employees));
+
+// let arr = ["mango", "orange", "apple"];
+// let no = [3, 4, 7, 1];
+// let temp1 = no.sort((a, b) => a-b);
+// console.log(temp1);
+// let temp2 = arr.sort((a, b) => a.localeCompare(b));
+// console.log(temp2);
+
+// const items = [
+// 	{ name: "Edward", value: 21 },
+// 	{ name: "Sharpe", value: 37 },
+// 	{ name: "And", value: 45 },
+// 	{ name: "The", value: -12 },
+// 	{ name: "Magnetic", value: 13 },
+// 	{ name: "Zeros", value: 37 },
+// ];
+
+// let temp = items.sort((a, b) => {
+// 	if (a.name < b.name) return -1;
+// 	if (a.name > b.name) return 1;
+// 	return 0;
+// });
+// console.log(temp);
+/*************************************************************************************** */
+// const library = {
+// 	books: [
+// 		{
+// 			title: "The Great Gatsby",
+// 			author: "F. Scott Fitzgerald",
+// 			copies: [
+// 				{ copyNumber: 1, isAvailable: false },
+// 				{ copyNumber: 2, isAvailable: true },
+// 			],
+// 		},
+// 		{
+// 			title: "1984",
+// 			author: "George Orwell",
+// 			copies: [
+// 				{ copyNumber: 1, isAvailable: false },
+// 				{ copyNumber: 2, isAvailable: false },
+// 			],
+// 		},
+// 		{
+// 			title: "To Kill a Mockingbird",
+// 			author: "Harper Lee",
+// 			copies: [{ copyNumber: 1, isAvailable: true }],
+// 		},
+// 	],
+// };
+// function availableBooks(library) {
+// 	let result = [];
+// 	for (let book of library.books) {
+// 		// console.log(book);
+
+// 		for (let copy of book.copies) {
+// 			if (copy.isAvailable) {
+// 				result.push(book.title);
+// 			}
+// 		}
+// 	}
+// 	return result;
+// 	// Your code here
+// }
+// console.log(availableBooks(library));
+/************************************************************************* */
+const employees = [
+	{ name: "Alice", age: 25, department: "HR" },
+	{ name: "Bob", age: 30, department: "Engineering" },
+	{ name: "Charlie", age: 22, department: "HR" },
+	{ name: "David", age: 35, department: "Engineering" },
+	{ name: "Eve", age: 28, department: "Marketing" },
+];
+
+let age = employees.sort((a, b) => a.age - b.age);
+console.log(age);
+let dept = employees.sort((a, b) => a.department.localeCompare(b.department));
+console.log(dept);

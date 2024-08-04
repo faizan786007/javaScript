@@ -867,31 +867,67 @@
 
 // console.log(sortByDepartmentAndAge(employees));
 /************************************************************************************ */
-const items = [
-	{ name: "Edward", value: 21 },
-	{ name: "Sharpe", value: 37 },
-	{ name: "And", value: 45 },
-	{ name: "The", value: -12 },
-	{ name: "Magnetic", value: 13 },
-	{ name: "Zeros", value: 37 },
-];
+// const items = [
+// 	{ name: "Edward", value: 21 },
+// 	{ name: "Sharpe", value: 37 },
+// 	{ name: "And", value: 45 },
+// 	{ name: "The", value: -12 },
+// 	{ name: "Magnetic", value: 13 },
+// 	{ name: "Zeros", value: 37 },
+// ];
 
-// sort by value
-// let i = items.sort((a, b) => a.value - b.value);
-// console.log(i);
+// // sort by value
+// // let i = items.sort((a, b) => a.value - b.value);
+// // console.log(i);
 
-// sort by name
-let j = items.sort((a, b) => {
-	const nameA = a.name;
-	const nameB = b.name;
-	if (nameA < nameB) {
-		return -1;
+// // sort by name
+// let j = items.sort((a, b) => {
+// 	const nameA = a.name;
+// 	const nameB = b.name;
+// 	if (nameA < nameB) {
+// 		return -1;
+// 	}
+// 	if (nameA > nameB) {
+// 		return 1;
+// 	}
+
+// 	// names must be equal
+// 	return 0;
+// });
+// console.log(j);
+/************************************************************************************* */
+/**************************************************************************************0 */
+/********************************************************************************** */
+const studentMarks = {
+	John: [85, 90, 92, 88, 87],
+	Jane: [92, 95, 89, 91, 94],
+	David: [78, 85, 90, 92, 84],
+	Emily: [90, 88, 92, 87, 91],
+	Michael: [86, 92, 90, 89, 94],
+};
+function findClassTopper(studentMarks) {
+	let sum = 0;
+	let max = 0;
+	let st = "";
+	for (let v in studentMarks) {
+		// console.log(studentMarks[v]);
+		// for (let i = 0; i < studentMarks[v].length; i++) {
+		// 	sum += studentMarks[v][i];
+		// }
+		sum = studentMarks[v].reduce((sum, cv) => {
+			return sum + cv;
+		}, 0);
+		if (sum > max) {
+			max = sum;
+			st = v;
+		}
+		sum = 0;
+		// console.log(sum, "sum");
+		// console.log(max, "max");
+		// console.log("name", st);
 	}
-	if (nameA > nameB) {
-		return 1;
-	}
-
-	// names must be equal
-	return 0;
-});
-console.log(j);
+	return st;
+	//Implement your function here
+}
+console.log(findClassTopper(studentMarks));
+//Output : "Jane";
