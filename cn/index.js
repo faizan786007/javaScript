@@ -348,15 +348,637 @@
 // console.log(a);//SyntaxError: Identifier 'a' has already been declared
 /******************************************************************************************* */
 //closure
-let a = 10;
+// let a = 10;
 
-function outer() {
-	let b = 20;
-	return function inner() {
-		let c = 30;
-		return `${a},${b},${c}`;
-	};
-}
-let temp = outer();
-console.log(temp());
+// function outer() {
+// 	let b = 20;
+// 	return function inner() {
+// 		let c = 30;
+// 		return `${a},${b},${c}`;
+// 	};
+// }
+// let temp = outer();
+// console.log(temp());
 //althought outer is out from call stack but inner remember b value through closure
+/********************************************************************************************** */
+//iifi
+
+// (function (a, b) {
+// 	console.log("hi");
+// 	console.log(a * b);
+// })(2, 3);
+
+// const data = (function () {
+// 	const user = {
+// 		userName: "ali",
+// 		userAge: 25,
+// 	};
+// 	function getName() {
+// 		console.log(user.userName);
+// 	}
+// 	function updateAge(age) {
+// 		console.log(user.userAge + age);
+// 	}
+// 	return { getName, updateAge };
+// })();
+
+// console.log(data.getName());
+// console.log(data.updateAge(3));
+/*********************************************************************************************** */
+//pure function
+
+// function sum(a, b) {
+// 	return a + b;
+// }
+// console.log(sum(10, 2));
+
+// //impure function
+// let disc = 10;
+// function discount(price) {
+// 	return price - disc;
+// }
+// console.log(discount(20));
+
+//console.log shouldnt be used in pure function as its a webapi
+//pure function dont modify input
+//output solely depent on input
+//pure function are those who dont take data from outside of a function(input output consisitent) or manipute any data outside of a functiom
+/************************************************************************************************* */
+//callback
+
+// function hello(fun) {
+// 	console.log("hello");
+// 	fun();
+// }
+// function hi() {
+// 	console.log("hi");
+// }
+// hello(hi);
+/***************************************************************************************** */
+//function returning a function
+
+// function greet(message) {
+// 	return function (wish) {
+// 		console.log(`${message},${wish}`);
+// 	};
+// }
+// // const greeting = greet("i wish u");
+// // console.log(greeting);
+// // greeting("hi");
+// //////or
+// greet("i wish u")("hi");
+
+/****************************************************************************************************** */
+//higher order fn
+//a func taking func as arguments or a func returning a func
+
+// let no = [1, 2, 3, 4, 5];
+
+// function operation(input, fn) {
+// 	const result = [];
+// 	for (let v of input) {
+// 		result.push(fn(v));
+// 	}
+// 	return result;
+// }
+// function square(n) {
+// 	return n * n;
+// }
+// function cube(n) {
+// 	return n * n * n;
+// }
+// console.log(operation(no, square));
+// console.log(operation(no, cube));
+/**************************************************************************************************** */
+//currying
+
+// function sum1(a, b, c) {
+// 	return a + b + c;
+// }
+// function sum2(a) {
+// 	return function (b) {
+// 		return function (c) {
+// 			return a + b + c;
+// 		};
+// 	};
+// }
+// console.log(sum1(1, 2, 3));
+// console.log(sum2(1)(2)(3));
+
+// function power1(a, b) {
+// 	return a ** b;
+// }
+// function power2(a) {
+// 	return function (b) {
+// 		return b ** a;
+// 	};
+// }
+// console.log(power1(2, 3));
+// console.log(power2(3)(2));
+// console.log(power2(3)(3));
+// console.log(power2(3)(4));
+/******************************************************************************************************************** */
+//map
+// let np = [1, 2, 3];
+// let mp = np.map((ele) => {
+// 	ele * ele;
+// });
+// console.log(mp);//[ undefined, undefined, undefined ]
+//reduce
+// let no = [1, 2, 3, 4, 5];
+// let ev = no.reduce((sum, cv) => {
+// 	// return cv % 2 === 0 ? sum + cv : sum;
+// 	if (cv % 2 === 0) {
+// 		return sum + cv;
+// 	} else return sum;
+// }, 0);
+// console.log(ev);
+
+// let arr = [];
+// let red = arr.reduce((acc, cv) => acc + cv, 6);
+// console.log(red);
+// When using the reduce method on an empty array, the initial value of the accumulator (acc)
+//  will be returned as the result. In your code, the initial value of the accumulator is 6,
+//  so the result of the reduce operation will simply be 6.
+
+// let arr = [1, 2, 3, 4, 5, 2, 4, 2];
+// let fil = arr.filter((ele, index, arr) => {
+// 	return arr.indexOf(ele) === index;
+// });
+// console.log(fil);
+
+/*************************************************************************************************** */
+//this
+//this is to the obj
+
+// "use strict";
+// function normal() {
+// 	console.log(this); //undefined
+// }
+// const arrow = () => {
+// 	console.log(this); //window obj
+// };
+// normal();
+// arrow();
+
+// const user1 = {
+// 	name: "ali",
+// 	getname: function () {
+// 		console.log(this);
+// 	},
+// };
+// const user2 = {
+// 	name: "faizan",
+// };
+// user1.getname();
+// user2.getname = user1.getname;
+// user2.getname();
+/******************************************************************************************** */
+/********************************************************************************************* */
+/********************************************************************************************** */
+//OOP  in js
+// const movie = {
+// 	name: "avenger",
+// 	cast: ["ali", "afaiza"],
+// 	getMovie: function () {
+// 		console.log(`${movie.name}:${movie.cast}`);
+// 	},
+// 	details: function (de) {
+// 		console.log(movie[de]);
+// 	},
+// };
+// const movie2 = {
+// 	name: "avenger",
+// 	cast: ["ali", "afaiza"],
+// 	getMovie: function () {
+// 		console.log(`${this.name}:${this.cast}`);
+// 	},
+// 	details: function (de) {
+// 		console.log(movie[de]);
+// 	},
+// };
+// console.log(movie.cast);
+// console.log(movie.name);
+// movie.getMovie();
+// movie.details("cast");
+// console.log(movie2.cast);
+// console.log(movie2.name);
+// movie.getMovie();
+// movie.details("cast");
+/*************************************************************************************** */
+/**************************************************************************************** */
+//factory function
+
+// function movie(name, yr) {
+// 	const movieObj = {
+// 		title: name,
+// 		release: yr,
+// 		getDeatils() {
+// 			console.log(`${this.title}:${this.release}`);
+// 		},
+// 	};
+// 	return movieObj;
+// }
+// const movie1 = movie("avatar", 2012);
+// console.log(movie1);
+// const movie2 = movie("hulk", 2018);
+// console.log(movie2);
+// movie1.getDeatils();
+// movie2.getDeatils();
+
+//constructor function
+// function Movie(name, yr) {
+// 	(this.title = name),
+// 		(this.release = yr),
+// 		(this.getDeatils = function () {
+// 			console.log(`${this.title}:${this.release}`);
+// 		});
+// }
+// const movie1 = new Movie("avatar", 2012);
+// console.log(movie1);
+// movie1.getDeatils();
+
+//prototype
+// function Movie(name) {
+// 	this.name = name;
+// }
+// const movie1 = new Movie("avatar");
+// movie1.yr = 2012;
+// console.log(movie1);
+// const movie2 = new Movie("ironMan");
+// console.log(movie2);
+// console.log(movie2.__proto__);
+// console.log(Movie.prototype);
+// console.log(movie2.__proto__.__proto__);
+// console.log(Object.prototype);
+// console.log(movie2.__proto__.__proto__.__proto__);
+
+// console.log(movie2.__proto__ === Movie.prototype);
+// console.log(movie2.__proto__.__proto__ === Object.prototype);
+
+////////////////
+// function Movie(name) {
+// 	this.name = name;
+// 	// this.getDetails = function () {
+// 	// 	console.log(`${this.name}`);
+// 	// };
+// }
+// Movie.prototype.getDetails = function () {
+// 	console.log(`${this.name}`);
+// };
+// const movie1 = new Movie("vatar");
+// console.log(movie1);
+// movie1.getDetails();
+
+/////////
+// const obj = { a: 1, b: 2 };
+// console.log(Object.prototype);
+// console.log(Object.getPrototypeOf(obj));
+
+/////
+// function Person(name) {
+// 	this.name = name;
+// }
+// Person.prototype.age = 40;
+// const man1 = new Person("ali");
+// man1.__proto__.look = "hi";
+// console.log(man1);
+// console.log(man1.__proto__);
+// console.log(man1.__proto__.age);
+// console.log(Person.prototype.age);
+
+//////
+// const no = [1, 2, 3];
+// console.log(no.__proto__);
+// console.log(no.__proto__.__proto__);
+
+//////////call,apply,bind
+// const car = {
+// 	name: "audi",
+// 	color: "black",
+// 	getDetails: function (brand) {
+// 		console.log(`${this.name}:${this.color}:${brand}`);
+// 	},
+// };
+// car.getDetails("a4");
+// const bus = {
+// 	name: "vovlo",
+// 	color: "red",
+// };
+// car.getDetails.call(bus, "sarkari");
+// car.getDetails.apply(bus, ["private"]);
+// let v1 = car.getDetails.bind(bus);
+// v1("meri bus");
+//********************************************************************************** */
+//********************************************************************************* */
+/********************************************************************************** */
+/////////class in js
+// class Vehicle {
+// 	//properties
+// 	name;
+// 	year;
+// 	//constructor
+// 	constructor(name, year) {
+// 		(this.name = name), (this.year = year);
+// 	}
+// 	//method
+// 	getDetails() {
+// 		console.log(`${this.name}:${this.year}`);
+// 	}
+// }
+// const v1 = new Vehicle("scooter", 1335);
+// console.log(v1);
+// v1.getDetails();
+
+///*********encapsulation =>hidding details that are not imp
+
+// class Vehicle {
+// 	//properties
+// 	name;
+// 	year;
+// 	//priavte prop
+// 	#regNumber;
+// 	//constructor
+// 	constructor(name, year, no) {
+// 		(this.name = name), (this.year = year), (this.#regNumber = no);
+// 	}
+// 	//priavte method
+// 	#getNumber(num) {
+// 		console.log(`${num}`);
+// 	}
+// 	//method
+// 	getDetails() {
+// 		console.log(`${this.name}:${this.year}:${this.#regNumber}`);
+// 		this.#getNumber(this.#regNumber);
+// 	}
+// }
+// const v1 = new Vehicle("scooter", 1335, 215456);
+// console.log(v1);
+// v1.getDetails();
+// // v1.#regNumber = 4644; //SyntaxError: Private field '#regNumber' must be declared in an enclosing class
+
+/////*******INheritence */
+
+// class Vehicle {
+// 	//properties
+// 	name;
+// 	year;
+// 	//constructor
+// 	constructor(name, year) {
+// 		(this.name = name), (this.year = year);
+// 	}
+// 	//method
+// 	getDetails() {
+// 		console.log(`${this.name}:${this.year}`);
+// 	}
+// }
+// class Car extends Vehicle {
+// 	constructor(brand, color) {
+// 		super("car", 2001);
+// 		this.brand = brand;
+// 		this.color = color;
+// 	}
+// 	getDetails() {
+// 		console.log(`${this.name}:${this.year}:${this.brand}:${this.color}`);
+// 	}
+// }
+// let car1 = new Car("audi", "red");
+// car1.getDetails();
+
+/////in=heritence in constructor fn
+
+// function Vehicle(name, color, wheels) {
+// 	this.name = name;
+// 	this.color = color;
+// 	this.wheels = wheels;
+// }
+// Vehicle.prototype.getVehDetails = function () {
+// 	console.log(
+// 		`Name: ${this.name}\nColor: ${this.color}\nWheels: ${this.wheels}`
+// 	);
+// };
+
+// function Car(color, brand, seats) {
+// 	Vehicle.call(this, "car", "Blue", 4);
+// 	this.brand = brand;
+// 	this.seats = seats;
+// }
+
+// Car.prototype = Object.create(Vehicle.prototype);
+
+// Car.prototype.getDetails = function () {
+// 	console.log(`
+// 		The ${this.color} ${this.name} is of ${this.brand} company.
+// 		It has seating for ${this.seats} people`);
+// };
+
+// const car1 = new Car("Black", "Audi", 5);
+// car1.getDetails();
+// console.log(car1);
+// console.log(car1.__proto__);
+// car1.getVehDetails();
+
+/////////******* */
+//Static
+
+// class Vehicle {
+// 	static vName = "static Name";
+// 	//constructor
+// 	constructor(name, color, wheels) {
+// 		this.name = name;
+// 		this.color = color;
+// 		this.wheels = wheels;
+// 	}
+// 	//methods
+// 	getDetails() {
+// 		console.log(`
+// 		  The ${this.name} is ${this.color} in color.
+// 		  It has ${this.wheels} wheels.
+// 		  `);
+// 	}
+// 	//static method
+// 	static showMsg() {
+// 		console.log("This is the static method of the class");
+// 	}
+// }
+
+// const v1 = new Vehicle("Car", "blue", 4);
+// console.log(v1);
+// Vehicle.showMsg();
+// console.log(Vehicle.vName);
+
+/////*********** */
+
+//getter and setter
+
+// class Circle {
+// 	constructor(r) {
+// 		this.r = r;
+// 	}
+// 	get diameter() {
+// 		return this.r * 2;
+// 	}
+// 	set radius(newR) {
+// 		this.r = newR;
+// 	}
+// }
+// let circle = new Circle(2);
+// console.log(circle.diameter);
+// circle.radius = 4;
+// console.log(circle.diameter);
+
+// /////////////
+// lass Circle {
+// 	constructor(radius) {
+// 	  this.radius = radius;
+// 	}
+
+// 	get diameter() {
+// 	  return this.radius * 2;
+// 	}
+
+// 	set diameter(newDiameter) {
+// 	  if (newDiameter >= 0) {
+// 		this.radius = newDiameter / 2;
+// 	  } else {
+// 		console.log('Invalid Input');
+// 	  }
+// 	}
+
+// 	//   getDiameter() {
+// 	//     console.log(this.radius * 2);
+// 	//   }
+//   }
+
+//   const circle = new Circle(4);
+//   console.log(circle.radius);
+//   // circle.getDiameter();
+//   console.log(circle.diameter);
+//   circle.radius = 6;
+//   console.log(circle.diameter);
+//   circle.diameter = 20;
+//   console.log(circle.radius);
+//   console.log(circle.diameter);
+//   circle.diameter = -2;
+//   console.log(circle.radius);
+
+/************************************************************************** */
+///built in method
+
+// const today = new Date();
+// console.log(today);
+
+// const birthDate = new Date("1999-06-12");
+// console.log(birthDate);
+
+// const someDay = new Date(1990, 7);
+// console.log(someDay);
+
+// console.log(birthDate.getFullYear());
+
+// console.log(birthDate.toDateString());
+// const birthStr = birthDate.toString();
+// console.log(birthStr.slice(11, 20));
+
+/******************************************************************* */
+//shallow copy
+
+// const user1 = {
+// 	username: 'Sara',
+// 	age: 12,
+// 	marks:{
+// 	  maths:20,
+// 	  eng:25
+// 	}
+
+// 	};
+
+//Deep Copy and shallow Copy
+
+// const user2 = user1;
+// console.log(user1);
+// console.log(user2);
+
+// user2.username = 'Harry';
+// console.log(user2);
+// console.log(user1);
+
+//Shallow Copy
+
+// const user2 = { ...user1 };
+// console.log(user2);
+// console.log(user1);
+
+// user2.username = 'Harry';
+// console.log(user2);
+// console.log(user1);
+
+//Object.assign
+//   const user2 = Object.assign({}, user1);
+//   console.log(user2);
+//   console.log(user1);
+
+//   user2.username = 'Harry';
+//   user2.marks.maths = 10;
+//   console.log(user2);
+//   console.log(user1);
+
+/////////
+// const user1 = {
+// 	username: "Sara",
+// 	age: 12,
+// 	marks: {
+// 		maths: 20,
+// 		eng: 25,
+// 	},
+// 	getMarks() {
+// 		console.log(this.marks);
+// 	},
+// };
+// //Deep Copy and shallow Copy
+
+// //Deep Copy
+
+// const user2 = JSON.parse(JSON.stringify(user1));
+
+// user2.username = "Harry";
+// user2.marks.maths = 10;
+// console.log(user2);
+// console.log(user1);
+
+/*************************************************************** */
+/****************************************************************** */
+/***************************************************************** */
+//DOM
+
+// let btn = document.createElement("button");
+// btn.className = "my-Btn";
+// btn.textContent = "click me";
+
+// let div = document.querySelector("div");
+// div.appendChild(btn);
+// // document.querySelector("h1").remove();
+// btn.addEventListener("click", function () {
+// 	print("ali");
+// });
+// function print(value) {
+// 	console.log(value);
+// }
+// function gogo() {
+// 	console.log("ggogo");
+// }
+//******************************************************************** */
+/********************************************************************** */
+/*********************************************************************** */
+
+///*********************asyn js
+let btn = document.querySelector("button");
+let heading = document.querySelector("h3");
+let sec = 0;
+function start() {
+	let id = setInterval(() => {
+		sec++;
+		heading.textContent = `${sec} second`;
+		if (sec > 5) clearInterval(id);
+	}, 1000);
+}
