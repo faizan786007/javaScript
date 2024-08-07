@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+   button{
+    padding: 20px;
+    font-size: 2rem;
+    border-radius: 50%;
+   }
+   h2{
+    color: blue;
+   }
+
+</style>
+<body>
+    <div class="container">
+        <h1>ROCK-PAPER-SICCIOR</h1>
+        <div class="smallContainer">
+            <button onclick="player('rock')">🗻</button>
+            <button onclick="player('scissors')">🔪</button>
+            <button onclick="player('paper')">📕</button>
+        </div>
+        <div class="display">
+            <h2 id="pc"></h2>
+            <h2 id="cc"></h2>
+           <h1 id="result"></h1> 
+           <h1 id="playerScore"></h1>
+           <h1 id="compScore"></h1>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

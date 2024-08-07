@@ -110,9 +110,8 @@
 // You are given an array of objects representing transactions. Each object has a userId, amount,
 // and date. Write a function called topSpenders that returns an array of userIds sorted by their
 // total transaction amount in descending order. Only include users who have made more than one
-// transaction.
+// t{ userId: 1, amount: 50, date: "2023-01-01" },ransaction.
 const transactions = [
-	{ userId: 1, amount: 50, date: "2023-01-01" },
 	{ userId: 2, amount: 20, date: "2023-01-02" },
 	{ userId: 1, amount: 100, date: "2023-01-03" },
 	{ userId: 3, amount: 150, date: "2023-01-04" },
@@ -129,14 +128,33 @@ function topSpenders(transactions) {
 			result[userId] = 1;
 		}
 	}
-	console.log(result);
+	console.log(result); //array =>object
 	let value = Object.keys(result);
-	// console.log(value);
+	console.log(value);
 	for (let v of value) {
 		if (result[v] > 1) actualResult.push(Number(v));
 	}
-	return actualResult;
+	// return actualResult;  //object=>array
 	// Your code here
 }
 console.log(topSpenders(transactions));
 // Output should be [1, 2]
+
+// const input = { 1: 2, 2: 2, 3: 1 };
+// output = [1, 2];
+// let key = Object.keys(input);
+// // console.log(key);
+// for (let k of key) {
+// 	console.log(input[k]);
+// }
+
+// const no = [1, 2, 1, 1, 2, 3];
+// output = { 1: 3, 2: 2, 3: 1 };
+// let res = {};
+
+// for (let e of no) {
+// 	if (res[e]) {
+// 		res[e] += 1;
+// 	} else res[e] = 1;
+// }
+// console.log(res);

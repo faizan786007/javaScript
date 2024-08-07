@@ -972,13 +972,13 @@
 /*********************************************************************** */
 
 ///*********************asyn js
-let btn = document.querySelector("button");
-let heading = document.querySelector("h3");
-let sec = 0;
-function start() {
-	let id = setInterval(() => {
-		sec++;
-		heading.textContent = `${sec} second`;
-		if (sec > 5) clearInterval(id);
-	}, 1000);
-}
+// let btn = document.querySelector("button");
+// let heading = document.querySelector("h3");
+// let sec = 0;
+// function start() {
+// 	let id = setInterval(() => {
+// 		sec++;
+// 		heading.textContent = `${sec} second`;
+// 		if (sec > 5) clearInterval(id);
+// 	}, 1000);
+// }

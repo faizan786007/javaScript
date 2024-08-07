@@ -898,36 +898,114 @@
 /************************************************************************************* */
 /**************************************************************************************0 */
 /********************************************************************************** */
-const studentMarks = {
-	John: [85, 90, 92, 88, 87],
-	Jane: [92, 95, 89, 91, 94],
-	David: [78, 85, 90, 92, 84],
-	Emily: [90, 88, 92, 87, 91],
-	Michael: [86, 92, 90, 89, 94],
-};
-function findClassTopper(studentMarks) {
-	let sum = 0;
-	let max = 0;
-	let st = "";
-	for (let v in studentMarks) {
-		// console.log(studentMarks[v]);
-		// for (let i = 0; i < studentMarks[v].length; i++) {
-		// 	sum += studentMarks[v][i];
-		// }
-		sum = studentMarks[v].reduce((sum, cv) => {
-			return sum + cv;
-		}, 0);
-		if (sum > max) {
-			max = sum;
-			st = v;
-		}
-		sum = 0;
-		// console.log(sum, "sum");
-		// console.log(max, "max");
-		// console.log("name", st);
-	}
-	return st;
-	//Implement your function here
-}
-console.log(findClassTopper(studentMarks));
+// const studentMarks = {
+// 	John: [85, 90, 92, 88, 87],
+// 	Jane: [92, 95, 89, 91, 94],
+// 	David: [78, 85, 90, 92, 84],
+// 	Emily: [90, 88, 92, 87, 91],
+// 	Michael: [86, 92, 90, 89, 94],
+// };
+// function findClassTopper(studentMarks) {
+// 	let sum = 0;
+// 	let max = 0;
+// 	let st = "";
+// 	for (let v in studentMarks) {
+// 		// console.log(studentMarks[v]);
+// 		// for (let i = 0; i < studentMarks[v].length; i++) {
+// 		// 	sum += studentMarks[v][i];
+// 		// }
+// 		sum = studentMarks[v].reduce((sum, cv) => {
+// 			return sum + cv;
+// 		}, 0);
+// 		if (sum > max) {
+// 			max = sum;
+// 			st = v;
+// 		}
+// 		sum = 0;
+// 		// console.log(sum, "sum");
+// 		// console.log(max, "max");
+// 		// console.log("name", st);
+// 	}
+// 	return st;
+// 	//Implement your function here
+// }
+// console.log(findClassTopper(studentMarks));
 //Output : "Jane";
+///////////********************************************************************* */
+//////////////callbackhELL
+
+// function task1(callback) {
+// 	setTimeout(() => {
+// 		console.log("task1");
+// 		callback();
+// 	}, 2000);
+// }
+// function task2(callback) {
+// 	setTimeout(() => {
+// 		console.log("task2");
+// 		callback();
+// 	}, 1000);
+// }
+// function task3(callback) {
+// 	setTimeout(() => {
+// 		console.log("task3");
+// 		callback();
+// 	}, 3000);
+// }
+// function task4(callback) {
+// 	setTimeout(() => {
+// 		console.log("task4");
+// 		callback();
+// 	}, 1500);
+// }
+// task1(() => {
+// 	task2(() => {
+// 		task3(() => {
+// 			task4(() => {
+// 				console.log("every thing complete");
+// 			});
+// 		});
+// 	});
+// });
+// task2();
+// task3();
+// task4();
+// console.log("every thing complete");
+
+/*********************************************************************************** */
+//////promises
+
+function walkDog() {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			resolve("u walk the dog");
+		}, 3000);
+	});
+}
+function cleanTheTrash() {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			resolve("u clean the trash");
+		}, 2000);
+	});
+}
+function cleanTheKitchen() {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			resolve("u clean the kitchen");
+		}, 1000);
+	});
+}
+walkDog()
+	.then((resolve) => {
+		console.log(resolve);
+		return cleanTheTrash();
+	})
+	.then((resolve) => {
+		console.log(resolve);
+		return cleanTheKitchen();
+	})
+	.then((resolve) => {
+		console.log(resolve);
+		console.log("all task completed");
+	});
