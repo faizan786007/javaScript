@@ -975,37 +975,108 @@
 /*********************************************************************************** */
 //////promises
 
-function walkDog() {
-	return new Promise((resolve, reject) => {
-		setTimeout(() => {
-			resolve("u walk the dog");
-		}, 3000);
-	});
-}
-function cleanTheTrash() {
-	return new Promise((resolve, reject) => {
-		setTimeout(() => {
-			resolve("u clean the trash");
-		}, 2000);
-	});
-}
-function cleanTheKitchen() {
-	return new Promise((resolve, reject) => {
-		setTimeout(() => {
-			resolve("u clean the kitchen");
-		}, 1000);
-	});
-}
-walkDog()
-	.then((resolve) => {
-		console.log(resolve);
-		return cleanTheTrash();
-	})
-	.then((resolve) => {
-		console.log(resolve);
-		return cleanTheKitchen();
-	})
-	.then((resolve) => {
-		console.log(resolve);
-		console.log("all task completed");
-	});
+// function walkDog() {
+// 	return new Promise((resolve, reject) => {
+// 		setTimeout(() => {
+// 			const dog = true;
+// 			if (dog) {
+// 				resolve("u walk the dog");
+// 			} else {
+// 				reject("u didn't walk the dog");
+// 			}
+// 		}, 3000);
+// 	});
+// }
+// function cleanTheTrash() {
+// 	return new Promise((resolve, reject) => {
+// 		setTimeout(() => {
+// 			const trash = true;
+// 			if (trash) {
+// 				resolve("u clean the trash");
+// 			} else {
+// 				reject("u didn't clean the trash");
+// 			}
+// 		}, 2000);
+// 	});
+// }
+// function cleanTheKitchen() {
+// 	return new Promise((resolve, reject) => {
+// 		setTimeout(() => {
+// 			const kitchen = false;
+// 			if (kitchen) {
+// 				resolve("u clean the kitchen");
+// 			} else {
+// 				reject("u didn't clean the kitchen");
+// 			}
+// 		}, 1000);
+// 	});
+// }
+// // walkDog()
+// // 	.then((resolve) => {
+// // 		console.log(resolve);
+// // 		return cleanTheTrash();
+// // 	})
+// // 	.then((resolve) => {
+// // 		console.log(resolve);
+// // 		return cleanTheKitchen();
+// // 	})
+// // 	.then((resolve) => {
+// // 		console.log(resolve);
+// // 		console.log("all task completed");
+// // 	})
+// // 	.catch((error) => console.error(error));
+
+// ///////////making it async await
+// async function alltask() {
+// 	try {
+// 		const dogTask = await walkDog();
+// 		console.log(dogTask);
+// 		const trashTask = await cleanTheTrash();
+// 		console.log(trashTask);
+// 		const kitchenTask = await cleanTheKitchen();
+// 		console.log(kitchenTask);
+// 	} catch (error) {
+// 		console.error(error);
+// 	}
+// }
+// alltask();
+
+/////*************************************************************************************** */
+
+///////////fetch/////
+// fetch("https://pokeapi.co/api/v2/pokemon/ditto")
+// 	.then((response) => {
+// 		if (!response.ok) {
+// 			throw new Error("not found");
+// 		}
+// 		return response.json();
+// 	})
+// 	.then((data) => console.log(data.id))
+// 	.catch((error) => console.error(error));
+
+// let pokemon = document.getElementById("pokemon");
+// console.log(pokemon.value);
+// let image = document.getElementById("image");
+//sprites
+//
+
+// async function fetchData() {
+// 	try {
+// 		let pokemon = document.getElementById("pokemon").value;
+// 		const response = await fetch(
+// 			`https://pokeapi.co/api/v2/pokemon/${pokemon}`
+// 		);
+// 		if (!response.ok) {
+// 			throw new Error("not found");
+// 		}
+// 		const data = await response.json();
+// 		let image = document.getElementById("image");
+// 		image.src = data.sprites.front_default;
+// 		image.style.display = "block";
+// 		// console.log(data.name);
+// 		// console.log(data.sprites.front_default);
+// 	} catch (error) {
+// 		console.error(error);
+// 	}
+// }
+// // fetchData();
