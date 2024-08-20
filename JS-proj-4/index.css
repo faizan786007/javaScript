@@ -18,7 +18,8 @@ h1 {
 
 /* Styling for the input field and button */
 
-input[type="text"] {
+input[type="text"],
+input[type="date"] {
 	padding: 10px;
 	font-size: 16px;
 	border: 1px solid #ddd;
@@ -81,4 +82,9 @@ li {
 
 .delete-button:hover {
 	background-color: #c82333;
+}
+.item-date {
+	font-size: 14px;
+	color: #777;
+	margin-left: 20px;
 }
