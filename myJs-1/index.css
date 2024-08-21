@@ -15,7 +15,7 @@
 	background-color: rgb(163, 127, 198);
 } */
 
-.dice {
+/* .dice {
 	text-align: center;
 }
 .btn {
@@ -25,7 +25,7 @@
 	background-color: rebeccapurple;
 	font-size: 1.2em;
 	border: none;
-}
+} */
 
 /*temperatrure converter*/
 
@@ -57,3 +57,39 @@ button {
 	border: none;
 	border-radius: 10px;
 } */
+
+.container {
+	width: 70%;
+	margin-left: 15%;
+	background-color: #070804;
+	/* border: 1px solid red; */
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+}
+#pokemon {
+	width: 50%;
+	margin: auto;
+	padding: 20px;
+	font-size: 1.5rem;
+}
+.btn {
+	padding: 10px 20px;
+	margin: auto;
+	width: 10%;
+
+	color: white;
+	background-color: rebeccapurple;
+	font-size: 1.2em;
+	border: none;
+}
+#image {
+	width: 35%;
+	height: 50%;
+	margin-left: 30%;
+}
+#PokeName {
+	text-align: center;
+	color: white;
+}

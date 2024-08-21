@@ -1060,23 +1060,26 @@
 //sprites
 //
 
-// async function fetchData() {
-// 	try {
-// 		let pokemon = document.getElementById("pokemon").value;
-// 		const response = await fetch(
-// 			`https://pokeapi.co/api/v2/pokemon/${pokemon}`
-// 		);
-// 		if (!response.ok) {
-// 			throw new Error("not found");
-// 		}
-// 		const data = await response.json();
-// 		let image = document.getElementById("image");
-// 		image.src = data.sprites.front_default;
-// 		image.style.display = "block";
-// 		// console.log(data.name);
-// 		// console.log(data.sprites.front_default);
-// 	} catch (error) {
-// 		console.error(error);
-// 	}
-// }
-// // fetchData();
+async function fetchData() {
+	try {
+		let pokemon = document.getElementById("pokemon").value;
+		const response = await fetch(
+			`https://pokeapi.co/api/v2/pokemon/${pokemon}`
+		);
+		if (!response.ok) {
+			throw new Error("not found");
+		}
+		const data = await response.json();
+		let image = document.getElementById("image");
+		image.src = data.sprites.front_default;
+		let PokeName = document.getElementById("PokeName");
+		PokeName.textContent = data.name;
+		// console.log(data.name);
+		image.style.display = "block";
+		// console.log(data.name);
+		// console.log(data.sprites.front_default);
+	} catch (error) {
+		console.error(error);
+	}
+}
+// fetchData();
