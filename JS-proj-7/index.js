@@ -61,6 +61,7 @@ function displayWeatherInfo(data) {
 	weatherEmoji.textContent = getWeatherEmoji(id);
 
 	cityDisplay.classList.add("cityDisplay");
+	// console.log(cityDisplay);
 	tempDisplay.classList.add("tempDisplay");
 	humidityDisplay.classList.add("humidityDisplay");
 	descDisplay.classList.add("descDisplay");
