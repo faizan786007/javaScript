@@ -2,10 +2,10 @@
 //|| =>first truthy and last falsy
 // null,undefinded,false,0,'',Nan====>falsy
 
-// console.log(5 && 1 && 3);
-// console.log(5 && false && 3);
-// console.log(false || "" || null || 2);
-// console.log(1 || false || "" || null || 2);
+console.log(5 && 1 && 3);
+console.log(5 && false && 3);
+console.log(false || "" || null || 2);
+console.log(1 || false || "" || null || 2);
 
 // console.log(3 > 2 > 1); //false ==>true==1 && false==0
 // console.log(1 < 2 < 3); //true
